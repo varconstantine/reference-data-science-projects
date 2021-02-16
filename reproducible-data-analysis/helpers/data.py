@@ -32,7 +32,7 @@ def get_fremont_data(file_name='Fremont.csv', url=FREMONT_URL, force_download=Fa
     fremont_df = pd.read_csv('Fremont.csv', index_col='Date')
     fremont_df.columns = ['Total', 'East', 'West']
     try:
-        fremont_df.index = pd.to_datetime(fremont_df.index, format='%m/%d/%Y %H:%M:%S %p')
+        fremont_df.index = pd.to_datetime(fremont_df.index, format='%m/%d/%Y %I:%M:%S %p')
     except TypeError:
         fremont_df.index = pd.to_datetime(fremont_df.index)
 
